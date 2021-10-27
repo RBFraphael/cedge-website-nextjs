@@ -1,0 +1,60 @@
+header {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem 0;
+
+    .logo-image {
+        cursor: pointer;
+    }
+
+    ul.desktop-menu {
+        li {
+            position: relative;
+            vertical-align: middle;
+            text-align: center;
+            font-family: 'DIN Pro', sans-serif;
+            text-transform: uppercase;
+            color: $white;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: .875rem;
+            letter-spacing: .1rem;
+            padding: 0 1.5rem;
+
+            &:not(:last-child){
+                &::after{
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    width: 2px;
+                    height: 0.5rem;
+                    transform: translateY(-50%);
+                    background: $white;
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: .5rem;
+                right: .5rem;
+                height: 2px;
+                background: $red;
+                transform: scaleX(0);
+                transform-origin: 50% 50%;
+                transition: transform 0.25s;
+            }
+
+            &:hover{
+                &::before{
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+}
